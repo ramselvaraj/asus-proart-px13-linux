@@ -1,0 +1,18 @@
+[Unit]
+Description=Turn off ASUS keyboard backlight in tablet mode
+Documentation=https://github.com/ramselvaraj/asus-proart-px13-linux/tree/main/tablet-backlight
+After=systemd-modules-load.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/libexec/asus-tablet-backlight
+Restart=always
+RestartSec=2
+StateDirectory=asus-tablet-backlight
+NoNewPrivileges=yes
+ProtectSystem=full
+ProtectHome=yes
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target
